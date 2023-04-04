@@ -33,12 +33,12 @@ public class ClientController {
         return service.getClientById(clientId);
     }
 
-    @PutMapping("/update")
+    @PutMapping("/updateClientById")
     public Client updateClient(@RequestBody Client client) {
         return service.updateClient(client);
     }
 
-    @DeleteMapping("/delete/{clientId}")
+    @DeleteMapping("/deleteClientById/{clientId}")
     public String deleteClient(@PathVariable int clientId) {
         return service.deleteClient(clientId);
     }

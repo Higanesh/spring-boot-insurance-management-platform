@@ -17,7 +17,7 @@ public class Claim {
 
     @Id
     @GeneratedValue
-    private double claimNumber;
+    private int claimNumber;
     private String description;
     private String claimDate;
     private String claimStatus;

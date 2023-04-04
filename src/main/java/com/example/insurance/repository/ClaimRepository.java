@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface ClaimRepository extends JpaRepository<Claim,Double> {
+public interface ClaimRepository extends JpaRepository<Claim,Integer> {
 
 
 

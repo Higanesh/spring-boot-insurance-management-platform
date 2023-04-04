@@ -31,17 +31,17 @@ public class InsuranceController {
     }
 
     @GetMapping("/InsurancePolicyByPolicyNumber/{policyNumber}")
-    public InsurancePolicy findPolicyByNumber(@PathVariable double policyNumber) {
+    public InsurancePolicy findPolicyByNumber(@PathVariable int policyNumber) {
         return service.getPolicyById(policyNumber);
     }
 
-    @PutMapping("/update")
+    @PutMapping("/updateInsurancePolicy")
     public InsurancePolicy updateInsurancePolicy(@RequestBody InsurancePolicy insurancepolicy) {
         return service.updateInsurancePolicy(insurancepolicy);
     }
 
-    @DeleteMapping("/delete/{policyNumber}")
-    public String deleteInsurancePolicy(@PathVariable double policyNumber) {
+    @DeleteMapping("/deleteInsurancePolicy/{policyNumber}")
+    public String deleteInsurancePolicy(@PathVariable int policyNumber) {
         return service.deleteInsurancePolicy(policyNumber);
     }
 }

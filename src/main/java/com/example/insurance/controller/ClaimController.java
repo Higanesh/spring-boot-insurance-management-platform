@@ -31,7 +31,7 @@ public class ClaimController {
     }
 
     @GetMapping("/ClaimByNumber/{claimNumber}")
-    public Claim findClaimById(@PathVariable double claimNumber) {
+    public Claim findClaimById(@PathVariable int claimNumber) {
         return service.getClaimById(claimNumber);
     }
 
@@ -40,8 +40,8 @@ public class ClaimController {
         return service.updateclaim(claim);
     }
 
-    @DeleteMapping("/delete/{claimNumber}")
-    public String deleteClaim(@PathVariable double claimNumber) {
+    @DeleteMapping("/deleteClaim/{claimNumber}")
+    public String deleteClaim(@PathVariable int claimNumber) {
         return service.deleteClaim(claimNumber);
     }
 

@@ -26,7 +26,7 @@ public class ClaimService {
         return repository.findAll();
     }
 
-    public Claim getClaimById(double claimNumber) {
+    public Claim getClaimById(int claimNumber) {
         return repository.findById(claimNumber).orElse(null);
     }
 
@@ -39,7 +39,7 @@ public class ClaimService {
         return repository.save(existingClaim);
     }
 
-    public String deleteClaim(double claimNumber) {
+    public String deleteClaim(int claimNumber) {
         repository.deleteById(claimNumber);
         return "Claim removed !! " + claimNumber;
     }

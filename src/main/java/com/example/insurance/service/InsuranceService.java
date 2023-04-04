@@ -26,7 +26,7 @@ public class InsuranceService {
         return repository.findAll();
     }
 
-    public InsurancePolicy getPolicyById(double policyNumber) {
+    public InsurancePolicy getPolicyById(int policyNumber) {
         return repository.findById(policyNumber).orElse(null);
     }
 
@@ -41,7 +41,7 @@ public class InsuranceService {
         return repository.save(existingPolicy);
     }
 
-    public String deleteInsurancePolicy(double policyNumber) {
+    public String deleteInsurancePolicy(int policyNumber) {
         repository.deleteById(policyNumber);
         return "Client removed !! " + policyNumber;
     }

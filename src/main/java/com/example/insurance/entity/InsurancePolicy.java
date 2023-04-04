@@ -19,7 +19,7 @@ public class InsurancePolicy {
 
     @Id
     @GeneratedValue
-    private double policyNumber;
+    private int policyNumber;
     private String policyType;
     private double coverageAmount;
     private double premium;
