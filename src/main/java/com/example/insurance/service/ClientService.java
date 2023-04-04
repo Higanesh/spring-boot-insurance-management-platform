@@ -1,7 +1,6 @@
 package com.example.insurance.service;
 
 import com.example.insurance.entity.Client;
-import com.example.insurance.repository.ClaimRepository;
 import com.example.insurance.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

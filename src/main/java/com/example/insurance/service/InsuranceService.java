@@ -18,8 +18,8 @@ public class InsuranceService {
         return repository.save(insurancepolicy);
     }
 
-    public List<InsurancePolicy> saveInsurancePolicys(List<InsurancePolicy> insurancepolicy) {
-        return repository.saveAll(insurancepolicy);
+    public List<InsurancePolicy> saveInsurancePolicys(List<InsurancePolicy> insurancepolicys) {
+        return repository.saveAll(insurancepolicys);
     }
 
     public List<InsurancePolicy> getInsurancePolicy() {

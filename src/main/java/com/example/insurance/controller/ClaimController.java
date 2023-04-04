@@ -40,8 +40,8 @@ public class ClaimController {
         return service.updateclaim(claim);
     }
 
-    @DeleteMapping("/delete/{clientId}")
-    public String deleteClient(@PathVariable double claimNumber) {
+    @DeleteMapping("/delete/{claimNumber}")
+    public String deleteClaim(@PathVariable double claimNumber) {
         return service.deleteClaim(claimNumber);
     }
 

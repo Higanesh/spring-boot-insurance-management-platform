@@ -30,7 +30,7 @@ public class ClaimService {
         return repository.findById(claimNumber).orElse(null);
     }
 
-    public Claim updateclaim(Claim claim) {
+        public Claim updateclaim(Claim claim) {
         Claim existingClaim = repository.findById(claim.getClaimNumber()).orElse(null);
         existingClaim.setClaimNumber(claim.getClaimNumber());
         existingClaim.setDescription(claim.getDescription());
