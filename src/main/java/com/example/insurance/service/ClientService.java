@@ -28,8 +28,8 @@ public class ClientService {
         return repository.findById(clientId).orElse(null);
     }
 
-    public Client updateClient(Client client) {
-        Client existingClient = repository.findById(client.getClientId()).orElse(null);
+    public Client updateClient(int clientId, Client client) {
+        Client existingClient = repository.findById(clientId).orElse(null);
         existingClient.setName(client.getName());
         existingClient.setDateOfBirth(client.getDateOfBirth());
         existingClient.setAddress(client.getAddress());

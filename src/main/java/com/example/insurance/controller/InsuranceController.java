@@ -15,32 +15,32 @@ public class InsuranceController {
     @Autowired
     private InsuranceService service;
 
-    @PostMapping("/addInsurancePolicy")
+    @PostMapping("/api/policies")
     public InsurancePolicy addInsurance(@RequestBody InsurancePolicy insurancepolicy) {
         return service.saveInsurancePolicy(insurancepolicy);
     }
 
-    @PostMapping("/addInsurancePolicys")
+    @PostMapping("/api/multiplepolicies")
     public List<InsurancePolicy> addInsurances(@RequestBody List<InsurancePolicy> insurancepolicys) {
         return service.saveInsurancePolicys(insurancepolicys);
     }
 
-    @GetMapping("/getInsurancePolicys")
+    @GetMapping("/api/policies")
     public List<InsurancePolicy> findAllInsurancePolicys() {
         return service.getInsurancePolicy();
     }
 
-    @GetMapping("/InsurancePolicyByPolicyNumber/{policyNumber}")
+    @GetMapping("/api/policies/{policyNumber}")
     public InsurancePolicy findPolicyByNumber(@PathVariable int policyNumber) {
         return service.getPolicyById(policyNumber);
     }
 
-    @PutMapping("/updateInsurancePolicy")
-    public InsurancePolicy updateInsurancePolicy(@RequestBody InsurancePolicy insurancepolicy) {
-        return service.updateInsurancePolicy(insurancepolicy);
+    @PutMapping("/api/policies/{policyNumber}")
+    public InsurancePolicy updateInsurancePolicy(@PathVariable int policyNumber, @RequestBody InsurancePolicy insurancepolicy) {
+        return service.updateInsurancePolicy(policyNumber,insurancepolicy);
     }
 
-    @DeleteMapping("/deleteInsurancePolicy/{policyNumber}")
+    @DeleteMapping("/api/policies/{policyNumber}")
     public String deleteInsurancePolicy(@PathVariable int policyNumber) {
         return service.deleteInsurancePolicy(policyNumber);
     }

@@ -30,9 +30,8 @@ public class InsuranceService {
         return repository.findById(policyNumber).orElse(null);
     }
 
-    public InsurancePolicy updateInsurancePolicy(InsurancePolicy insurancepolicy) {
-        InsurancePolicy existingPolicy = repository.findById(insurancepolicy.getPolicyNumber()).orElse(null);
-        existingPolicy.setPolicyNumber(insurancepolicy.getPolicyNumber());
+    public InsurancePolicy updateInsurancePolicy(int policyNumber,InsurancePolicy insurancepolicy) {
+        InsurancePolicy existingPolicy = repository.findById(policyNumber).orElse(null);
         existingPolicy.setPolicyType(insurancepolicy.getPolicyType());
         existingPolicy.setCoverageAmount(insurancepolicy.getCoverageAmount());
         existingPolicy.setPremium(insurancepolicy.getPremium());
@@ -43,6 +42,6 @@ public class InsuranceService {
 
     public String deleteInsurancePolicy(int policyNumber) {
         repository.deleteById(policyNumber);
-        return "Client removed !! " + policyNumber;
+        return "Insurance Policy removed !! " + policyNumber;
     }
 }

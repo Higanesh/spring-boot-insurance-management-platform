@@ -30,9 +30,8 @@ public class ClaimService {
         return repository.findById(claimNumber).orElse(null);
     }
 
-        public Claim updateclaim(Claim claim) {
-        Claim existingClaim = repository.findById(claim.getClaimNumber()).orElse(null);
-        existingClaim.setClaimNumber(claim.getClaimNumber());
+        public Claim updateclaim(int claimNumber,Claim claim) {
+        Claim existingClaim = repository.findById(claimNumber).orElse(null);
         existingClaim.setDescription(claim.getDescription());
         existingClaim.setClaimDate(claim.getClaimDate());
         existingClaim.setClaimStatus(claim.getClaimStatus());

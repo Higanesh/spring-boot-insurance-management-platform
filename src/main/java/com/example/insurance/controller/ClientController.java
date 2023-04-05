@@ -13,32 +13,32 @@ public class ClientController {
     @Autowired
     private ClientService service;
 
-    @PostMapping("/addClient")
+    @PostMapping("/api/clients")
     public Client addClient(@RequestBody Client client) {
         return service.saveClient(client);
     }
 
-    @PostMapping("/addClients")
+    @PostMapping("/api/multipleclients")
     public List<Client> addClients(@RequestBody List<Client> clients) {
         return service.saveClients(clients);
     }
 
-    @GetMapping("/getClients")
+    @GetMapping("/api/clients")
     public List<Client> findAllClients() {
         return service.getClients();
     }
 
-    @GetMapping("/ClientById/{clientId}")
+    @GetMapping("/api/clients/{clientId}")
     public Client findClientById(@PathVariable int clientId) {
         return service.getClientById(clientId);
     }
 
-    @PutMapping("/updateClientById")
-    public Client updateClient(@RequestBody Client client) {
-        return service.updateClient(client);
+    @PutMapping("/api/clients/{clientId}")
+    public Client updateClient(@PathVariable int clientId, @RequestBody Client client) {
+        return service.updateClient(clientId, client);
     }
 
-    @DeleteMapping("/deleteClientById/{clientId}")
+    @DeleteMapping("/api/clients/{clientId}")
     public String deleteClient(@PathVariable int clientId) {
         return service.deleteClient(clientId);
     }
