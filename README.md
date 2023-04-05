@@ -14,7 +14,7 @@ Create a new database called policydb by executing the following SQL command:
 
 CREATE DATABASE policydb;
 
-git clone https://github.com/username/my-project.git
+git clone https://github.com/Higanesh/spring-boot-insurance-management-platform.git
 
 mvn spring-boot:run
 
